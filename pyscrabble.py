@@ -9,12 +9,13 @@ Let's just brute force it!
 import itertools
 
 # 1. user input
-# matches case sensitive
-in_letters = input('Letters to scrabble: ').lower()
+# I decided to make matches case sensitive,
+# to avoid false positives on things like the chemical symbol "Rb"
+in_letters = input('Letters to scrabble: ')
 
 with open('words.txt') as words_f:
     # 2. list of all words
-    all_words = [word.strip().lower() for word in words_f.readlines()]
+    all_words = [word.strip() for word in words_f.readlines()]
 
     # 3. find permutations of input letters.
     # we need permutations of all lengths, not just the length of the word,
@@ -32,6 +33,7 @@ with open('words.txt') as words_f:
 
 
 """
+Gotta go fast
 ░░░░░░░░░▄▄▄▄▄
 ░░░░░░░░▀▀▀██████▄▄▄
 ░░░░░░▄▄▄▄▄░░█████████▄ 
