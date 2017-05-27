@@ -1,5 +1,4 @@
 import sys
-import itertools
 
 
 def build_word_list():
@@ -19,21 +18,6 @@ def scrabble(input_letters, all_words):
     :returns: all words that match a permutation of the input
     :rtype: list
     """
-
-    # this completely chokes on longer strings of letters,
-    # which is exciting to watch
-    #all_perms = set()
-    #for length in range(1, len(letters) + 1):
-    #    all_perms.update(
-    #        set([
-    #            ''.join(perm) for perm
-    #            in itertools.permutations(letters, length)
-    #        ])
-    #    )
-    #all_matches = sorted(
-    #    [match for match in filter(lambda perm: perm in all_words, all_perms)]
-    #)
-
     matches = []
     for word in all_words:
         # if each letter in the word can be found in the input
