@@ -15,3 +15,8 @@ Directly from the command line:
 Interactive mode:
 
     python pyscrabble.py
+
+As a Python module:
+
+    import pyscrabble
+    pyscrabble.scrabble('koolcake', pyscrabble.build_word_list())
