@@ -9,7 +9,9 @@ like individual letters and chemical symbols.
 ## Usage:
 
 Directly from the command line:
+
     python pyscrabble.py apclaer
 
 Interactive mode:
+
     python pyscrabble.py
