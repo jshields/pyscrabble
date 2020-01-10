@@ -30,9 +30,7 @@ My initial solution was written with the attitude that "computers are fast."
 I brute-forced the solution using the `itertools` module in such a way that the
 complexity of the algorithm was:
 
-n * (n-1) * (n-2) * (n-3) ... * 1
-"n factorial"
-O(n!)
+n * (n-1) * (n-2) * (n-3) ... * 1 = "n factorial" = O(n!)
 
 The solution took a few seconds and worked correctly on shorter inputs,
 but brought the interpreter to a halt on longer inputs. Not good!
@@ -45,13 +43,10 @@ The general approach of the revised program is,
 I don't consider the list of dictionary words as being input;
 the performance analysis will be based strictly on change in performance with change in user input.
 
-Another caveat is that I am considering the Python `in` operator as having to iterate over each item in the righthand operand.
-So for the purpose of this review, that is how I will consider it in terms of algorithm complexity.
+For the analysis, the worst case of the Python `in` operator is if it has to iterate over each item in the righthand operand, O(n).
 
 I reduced the complexity of my algorithm to:
-n + (n-1) + (n-2) + (n-3) ... 1
-"arithmetic series"
-O(n^2)
+n + (n-1) + (n-2) + (n-3) ... 1 = "arithmetic series" = O(n^2)
 
 The arithmetic series comes from the fact that, at each step, one of the input letters is consumed.
 We start with having to look at all the input letters `n` to determine if the first letter of the word can be found.
@@ -63,3 +58,5 @@ The available input letters resets for each dictionary word,
 making the actual runtime complexity more than just the arithmetic series on its own.
 However, this will be a constant factor (number of words in the dictionary),
 which is ignored in Big Oh notation.
+
+O(n^2) is still not good so another approach may be needed.
