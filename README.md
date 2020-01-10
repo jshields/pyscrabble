@@ -59,4 +59,4 @@ making the actual runtime complexity more than just the arithmetic series on its
 However, this will be a constant factor (number of words in the dictionary),
 which is ignored in Big Oh notation.
 
-O(n^2) is still not good so another approach may be needed.
+O(n^2) worst case is still not good so another approach may be needed. However, the average runtime in practice seems OK.
